@@ -1,189 +1,216 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Muhammed | Kişisel Sayfa</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Muhammed | Proje Günlüğü</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        :root {
-            --bg: #0f1220;
-            --card: #171a2e;
-            --text: #e6e6eb;
-            --muted: #9aa0c3;
-            --accent: #6c7cff;
-        }
+<style>
+:root{
+    --bg:#0f1220;
+    --card:#171a2e;
+    --text:#e6e6eb;
+    --muted:#9aa0c3;
+    --accent:#6c7cff;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+*{box-sizing:border-box;margin:0;padding:0}
 
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: linear-gradient(120deg, #0f1220, #14183a);
-            color: var(--text);
-            line-height: 1.6;
-        }
+body{
+    font-family:system-ui,sans-serif;
+    background:linear-gradient(120deg,#0f1220,#14183a);
+    color:var(--text);
+}
 
-        header {
-            padding: 60px 20px;
-            text-align: center;
-        }
+header{
+    padding:40px 20px;
+    text-align:center;
+}
 
-        header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-        }
+header h1{font-size:2.5rem}
+header p{color:var(--muted);margin-top:8px}
 
-        header p {
-            color: var(--muted);
-            max-width: 600px;
-            margin: auto;
-        }
+.layout{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:1fr 360px;
+    gap:20px;
+}
 
-        main {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
+.card{
+    background:var(--card);
+    border-radius:16px;
+    padding:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
 
-        .card {
-            background: var(--card);
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
+.card h2{
+    color:var(--accent);
+    margin-bottom:12px;
+}
 
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.35);
-        }
+/* SÜRÜM PANELİ */
+.version-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
 
-        .card h2 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: var(--accent);
-        }
+.version-btn{
+    background:rgba(108,124,255,.15);
+    border:1px solid rgba(108,124,255,.3);
+    color:var(--accent);
+    padding:10px 14px;
+    border-radius:10px;
+    cursor:pointer;
+    text-align:left;
+}
 
-        .card p {
-            color: var(--text);
-            font-size: 0.95rem;
-        }
+.version-btn:hover{
+    background:rgba(108,124,255,.25);
+}
 
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            color: var(--muted);
-            font-size: 0.85rem;
-        }
+.version-detail{
+    display:none;
+    margin-top:15px;
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:15px;
+}
 
-        .tag {
-            display: inline-block;
-            margin: 4px 6px 0 0;
-            padding: 4px 10px;
-            font-size: 0.75rem;
-            border-radius: 999px;
-            background: rgba(108,124,255,0.15);
-            color: var(--accent);
-        }
+.version-detail.active{
+    display:block;
+}
 
-        button {
-            margin-top: 12px;
-            background: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            padding: 10px 14px;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
+/* TABLO */
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+    font-size:.9rem;
+}
 
-        button:hover {
-            opacity: 0.9;
-        }
-    </style>
+th,td{
+    border:1px solid rgba(255,255,255,.1);
+    padding:8px;
+}
+
+th{
+    background:rgba(108,124,255,.15);
+    color:var(--accent);
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:var(--muted);
+    font-size:.85rem;
+}
+</style>
 </head>
 <body>
 
 <header>
     <h1>Muhammed</h1>
-    <p>
-        Oyun geliştirme, Unity scriptleri, mod paketleri ve arada
-        bir kitapları tek oturuşta bitirme denemeleri.
-    </p>
+    <p>Projeler, sürümler ve düzenli kayıt</p>
 </header>
 
-<main>
+<div class="layout">
+
+    <!-- SOL -->
     <div class="card">
-        <h2>🎮 Oyun Geliştirme</h2>
+        <h2>📌 Proje Hakkında</h2>
         <p>
-            Unity ile uğraşırım. Bazen bir değişken yüzünden 2 saat,
-            bazen bir coroutine yüzünden geceyi veririm.
+            Bu sayfa projelerin sürüm bazlı değişikliklerini takip etmek için
+            hazırlanmıştır. Her yeni değişiklik bir sürüm olarak eklenir.
         </p>
-        <div>
-            <span class="tag">Unity</span>
-            <span class="tag">C#</span>
-            <span class="tag">Gameplay</span>
-        </div>
     </div>
 
+    <!-- SAĞ / SÜRÜMLER -->
     <div class="card">
-        <h2>🧱 Mod & Paketler</h2>
-        <p>
-            Minecraft 1.12.2 için sade, dekoratif ve gözü yormayan
-            mod paketleri ilgimi çeker. Gereksiz kaos yok.
-        </p>
-        <div>
-            <span class="tag">Minecraft</span>
-            <span class="tag">Modpack</span>
-            <span class="tag">Dekorasyon</span>
-        </div>
-    </div>
+        <h2>🧩 Sürümler</h2>
 
-    <div class="card">
-        <h2>📚 Okuma & Yazma</h2>
-        <p>
-            Romanları bazen tek günde bitirme gibi kötü bir huyum var.
-            Romantik komedi severim ama karanlık düşüş hikâyeleri de fena değil.
-        </p>
-        <div>
-            <span class="tag">Edebiyat</span>
-            <span class="tag">Hikâye</span>
-        </div>
-    </div>
+        <div class="version-list">
+            <button class="version-btn" onclick="toggleVersion(0)">
+                v1.0.0 — İlk Yayın
+            </button>
 
-    <div class="card">
-        <h2>⚙️ Küçük Deneyler</h2>
-        <p id="randomText">
-            Rastgele bir düşünce üretmek için butona bas.
-        </p>
-        <button onclick="rastgeleDusunce()">Düşünce Üret</button>
+            <button class="version-btn" onclick="toggleVersion(1)">
+                v1.1.0 — Oynanış Güncellemesi
+            </button>
+
+            <button class="version-btn" onclick="toggleVersion(2)">
+                v1.2.0 — Stabilite & Temizlik
+            </button>
+
+            <!-- EKLEME -->
+            <button class="version-btn" onclick="toggleVersion(3)">
+                v1.2.1 — İsim Güncellemesi
+            </button>
+        </div>
+
+        <!-- DETAYLAR -->
+        <div class="version-detail" id="version-0">
+            <p><strong>Açıklama:</strong> Projenin ilk yayınlanan sürümü.</p>
+            <table>
+                <tr><th>Alan</th><th>Detay</th></tr>
+                <tr><td>Durum</td><td>Başlangıç</td></tr>
+                <tr><td>İçerik</td><td>Temel yapı</td></tr>
+            </table>
+        </div>
+
+        <div class="version-detail" id="version-1">
+            <p><strong>Açıklama:</strong> Oynanış mekanikleri geliştirildi.</p>
+            <table>
+                <tr><th>Alan</th><th>Detay</th></tr>
+                <tr><td>Yeni</td><td>Toplama sistemi</td></tr>
+                <tr><td>Düzeltme</td><td>Spawn hataları</td></tr>
+            </table>
+        </div>
+
+        <div class="version-detail" id="version-2">
+            <p><strong>Açıklama:</strong> Kod ve performans düzenlemeleri.</p>
+            <table>
+                <tr><th>Alan</th><th>Detay</th></tr>
+                <tr><td>Optimizasyon</td><td>Script sadeleştirme</td></tr>
+                <tr><td>Temizlik</td><td>Gereksiz assetler silindi</td></tr>
+            </table>
+        </div>
+
+        <!-- SADECE EKLENEN KAYIT -->
+        <div class="version-detail" id="version-3">
+            <p><strong>Açıklama:</strong> Metinsel isim güncellemesi yapıldı.</p>
+            <table>
+                <tr><th>Alan</th><th>Detay</th></tr>
+                <tr>
+                    <td>Değişiklik</td>
+                    <td>Yuutak Raptor → Muhammed</td>
+                </tr>
+                <tr>
+                    <td>Tür</td>
+                    <td>Versiyon notu (ekleme)</td>
+                </tr>
+                <tr>
+                    <td>Etkisi</td>
+                    <td>Fonksiyonel değişiklik yok</td>
+                </tr>
+            </table>
+        </div>
+
     </div>
-</main>
+</div>
 
 <footer>
-    © 2026 — Deneme yanılma ile yapılmıştır. Hatalar bilinçlidir.
+    © 2026 — Değişiklikler kayıt altındadır.
 </footer>
 
 <script>
-    const dusunceler = [
-        "Bir oyunu bitirmekten çok, düzgün başlatmak zor.",
-        "En tehlikeli bug, 'şimdilik çalışıyor' denilen bug’dır.",
-        "Bazı kitaplar sınavdan hızlı okunur.",
-        "Bir mod paketi, sahibinin ruh halini yansıtır.",
-        "Coroutine’ler sabrı öğretir."
-    ];
-
-    function rastgeleDusunce() {
-        const secim = Math.floor(Math.random() * dusunceler.length);
-        document.getElementById("randomText").innerText = dusunceler[secim];
-    }
+function toggleVersion(index){
+    document.querySelectorAll(".version-detail").forEach((el,i)=>{
+        el.classList.toggle("active", i === index);
+    });
+}
 </script>
 
 </body>
