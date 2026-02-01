@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>Muhammed | Proje Günlüğü</title>
+<title>Muhammed | Kişisel Sayfa</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -20,17 +20,21 @@ body{
     font-family:system-ui,sans-serif;
     background:linear-gradient(120deg,#0f1220,#14183a);
     color:var(--text);
+    line-height:1.6;
 }
 
 header{
-    padding:50px 20px;
+    padding:60px 20px;
     text-align:center;
 }
 
-header h1{font-size:2.6rem}
+header h1{
+    font-size:2.8rem;
+}
+
 header p{
     color:var(--muted);
-    max-width:650px;
+    max-width:700px;
     margin:10px auto 0;
 }
 
@@ -52,10 +56,21 @@ header p{
 
 .card h2{
     color:var(--accent);
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
-/* SÜRÜMLER */
+/* SOL KARTLAR */
+.tag{
+    display:inline-block;
+    margin:4px 6px 0 0;
+    padding:4px 10px;
+    font-size:.75rem;
+    border-radius:999px;
+    background:rgba(108,124,255,.15);
+    color:var(--accent);
+}
+
+/* SAĞ / SÜRÜMLER */
 .version-list{
     display:flex;
     flex-direction:column;
@@ -87,7 +102,6 @@ header p{
     display:block;
 }
 
-/* TABLO */
 table{
     width:100%;
     border-collapse:collapse;
@@ -107,7 +121,7 @@ th{
 
 footer{
     text-align:center;
-    padding:25px;
+    padding:30px 20px;
     color:var(--muted);
     font-size:.85rem;
 }
@@ -118,28 +132,41 @@ footer{
 <header>
     <h1>Muhammed</h1>
     <p>
-        Oyun geliştirme, küçük projeler ve
-        yapılan her değişikliği sürüm bazlı kayıt altına alma alışkanlığı.
+        Oyun geliştirme, Unity scriptleri, mod paketleri
+        ve yapılan her değişikliği kayıt altına alma alışkanlığı.
     </p>
 </header>
 
 <div class="layout">
 
-    <!-- TANITIM -->
+    <!-- SOL / TANITIM -->
     <div class="card">
-        <h2>👋 Tanıtım</h2>
+        <h2>🎮 Oyun Geliştirme</h2>
         <p>
-            Bu site; projelerde yapılan ekleme, düzenleme ve temizliklerin
-            düzenli şekilde takip edilebilmesi için oluşturulmuş bir
-            kişisel proje günlüğüdür.
+            Unity ile çalışırım. Bazen bir değişken,
+            bazen bir coroutine bütün akşamı alır.
         </p>
-        <p style="margin-top:8px;">
-            Sağ tarafta yer alan sürüm paneli, her değişikliğin
-            hangi sürümle geldiğini açıkça gösterir.
+        <div>
+            <span class="tag">Unity</span>
+            <span class="tag">C#</span>
+            <span class="tag">Gameplay</span>
+        </div>
+
+        <h2 style="margin-top:20px;">📚 Okuma & Yazma</h2>
+        <p>
+            Romanları bazen tek günde bitirme gibi kötü
+            bir alışkanlık. Romantik komedi severim ama
+            düşüş hikâyeleri de ilgimi çeker.
+        </p>
+
+        <h2 style="margin-top:20px;">🧱 Mod Paketleri</h2>
+        <p>
+            Sade, dekoratif ve gözü yormayan mod paketleri.
+            Gereksiz karmaşa yok.
         </p>
     </div>
 
-    <!-- SÜRÜMLER -->
+    <!-- SAĞ / SÜRÜMLER -->
     <div class="card">
         <h2>🧩 Sürümler</h2>
 
@@ -147,61 +174,46 @@ footer{
             <button class="version-btn" onclick="toggleVersion(0)">
                 v1.0.0 — İlk Yayın
             </button>
-
             <button class="version-btn" onclick="toggleVersion(1)">
-                v1.1.0 — Oynanış Güncellemesi
+                v1.1.0 — İçerik Genişletme
             </button>
-
             <button class="version-btn" onclick="toggleVersion(2)">
-                v1.2.0 — Stabilite & Temizlik
-            </button>
-
-            <button class="version-btn" onclick="toggleVersion(3)">
-                v1.2.1 — Küçük Düzenlemeler
+                v1.2.0 — Düzenleme & Temizlik
             </button>
         </div>
 
         <div class="version-detail" id="version-0">
-            <p><strong>Açıklama:</strong> Projenin temel yapısı oluşturuldu.</p>
+            <p><strong>Açıklama:</strong> Kişisel sayfanın ilk sürümü.</p>
             <table>
                 <tr><th>Alan</th><th>Detay</th></tr>
-                <tr><td>Durum</td><td>Başlangıç</td></tr>
-                <tr><td>İçerik</td><td>İskelet yapı</td></tr>
+                <tr><td>İçerik</td><td>Tanıtım kartları</td></tr>
+                <tr><td>Yapı</td><td>Tek sayfa</td></tr>
             </table>
         </div>
 
         <div class="version-detail" id="version-1">
-            <p><strong>Açıklama:</strong> Oynanış tarafında geliştirmeler yapıldı.</p>
+            <p><strong>Açıklama:</strong> İçerik başlıkları genişletildi.</p>
             <table>
                 <tr><th>Alan</th><th>Detay</th></tr>
-                <tr><td>Yeni</td><td>Toplama sistemi</td></tr>
-                <tr><td>Düzeltme</td><td>Spawn hataları</td></tr>
+                <tr><td>Yeni</td><td>Mod & okuma bölümü</td></tr>
+                <tr><td>UI</td><td>Etiket sistemi</td></tr>
             </table>
         </div>
 
         <div class="version-detail" id="version-2">
-            <p><strong>Açıklama:</strong> Performans ve kod temizliği.</p>
+            <p><strong>Açıklama:</strong> Genel düzenleme.</p>
             <table>
                 <tr><th>Alan</th><th>Detay</th></tr>
-                <tr><td>Optimizasyon</td><td>Script sadeleştirme</td></tr>
-                <tr><td>Temizlik</td><td>Kullanılmayan assetler</td></tr>
+                <tr><td>Düzenleme</td><td>Metin akışı</td></tr>
+                <tr><td>Temizlik</td><td>Gereksiz boşluklar</td></tr>
             </table>
         </div>
-
-        <div class="version-detail" id="version-3">
-            <p><strong>Açıklama:</strong> Küçük arayüz ve metin düzenlemeleri.</p>
-            <table>
-                <tr><th>Alan</th><th>Detay</th></tr>
-                <tr><td>Düzenleme</td><td>Metin hizaları</td></tr>
-                <tr><td>UI</td><td>Buton boşlukları</td></tr>
-            </table>
-        </div>
-
     </div>
+
 </div>
 
 <footer>
-    © 2026 — Proje günlüğü
+    © 2026 — Kişisel proje sayfası
 </footer>
 
 <script>
