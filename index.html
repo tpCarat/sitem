@@ -28,9 +28,7 @@ header{
     text-align:center;
 }
 
-header h1{
-    font-size:2.8rem;
-}
+header h1{font-size:2.8rem}
 
 header p{
     color:var(--muted);
@@ -69,7 +67,7 @@ header p{
     color:var(--accent);
 }
 
-/* SAĞ / SÜRÜMLER */
+/* SÜRÜMLER */
 .version-list{
     display:flex;
     flex-direction:column;
@@ -97,9 +95,7 @@ header p{
     padding-top:15px;
 }
 
-.version-detail.active{
-    display:block;
-}
+.version-detail.active{display:block}
 
 table{
     width:100%;
@@ -131,19 +127,20 @@ footer{
 <header>
     <h1>Muhammed</h1>
     <p>
-        Oyun geliştirme, Unity scriptleri
-        ve yapılan her değişikliği kayıt altına alma alışkanlığı.
+        Oyun geliştirme, Unity scriptleri ve
+        yapılan her değişikliği sürüm bazlı takip etme alışkanlığı.
     </p>
 </header>
 
 <div class="layout">
 
-    <!-- SOL / TANITIM -->
+    <!-- SOL -->
     <div class="card">
         <h2>🎮 Oyun Geliştirme</h2>
         <p>
-            Unity ile çalışırım. Bazen bir değişken,
-            bazen bir coroutine bütün akşamı alır.
+            Unity ile çalışırım. Genelde küçük sistemler kurup
+            üstüne ekleyerek ilerlerim. Çalışan bir şey varsa
+            önce dokunmam, sonra bozarım.
         </p>
         <div>
             <span class="tag">Unity</span>
@@ -151,15 +148,27 @@ footer{
             <span class="tag">Gameplay</span>
         </div>
 
+        <h2 style="margin-top:20px;">⚙️ Teknik Deneyler</h2>
+        <p>
+            Rastgele prefab üretimi, coroutine zamanlamaları,
+            PlayerPrefs davranışları ve küçük mekanik testleri.
+            Genelde “çalışıyor ama neden?” sorusuyla biter.
+        </p>
+        <div>
+            <span class="tag">Prototype</span>
+            <span class="tag">Debug</span>
+            <span class="tag">Deneme-Yanılma</span>
+        </div>
+
         <h2 style="margin-top:20px;">📚 Okuma & Yazma</h2>
         <p>
-            Romanları bazen tek günde bitirme gibi kötü
-            bir alışkanlık. Romantik komedi severim ama
-            düşüş hikâyeleri de ilgimi çeker.
+            Bazı kitaplar bir günde biter, bazı fikirler
+            aylarca bekler. Not almayı ve geriye dönüp
+            bakmayı severim.
         </p>
     </div>
 
-    <!-- SAĞ / SÜRÜMLER -->
+    <!-- SAĞ -->
     <div class="card">
         <h2>🧩 Sürümler</h2>
 
@@ -176,7 +185,7 @@ footer{
         </div>
 
         <div class="version-detail" id="version-0">
-            <p><strong>Açıklama:</strong> Kişisel sayfanın ilk sürümü.</p>
+            <p><strong>Açıklama:</strong> Kişisel sayfanın temel yapısı.</p>
             <table>
                 <tr><th>Alan</th><th>Detay</th></tr>
                 <tr><td>İçerik</td><td>Tanıtım bölümleri</td></tr>
@@ -185,20 +194,20 @@ footer{
         </div>
 
         <div class="version-detail" id="version-1">
-            <p><strong>Açıklama:</strong> Metin içerikleri genişletildi.</p>
+            <p><strong>Açıklama:</strong> İçerik detaylandırıldı.</p>
             <table>
                 <tr><th>Alan</th><th>Detay</th></tr>
-                <tr><td>Yeni</td><td>Okuma & yazma bölümü</td></tr>
+                <tr><td>Yeni</td><td>Teknik deneyler bölümü</td></tr>
                 <tr><td>UI</td><td>Etiket sistemi</td></tr>
             </table>
         </div>
 
         <div class="version-detail" id="version-2">
-            <p><strong>Açıklama:</strong> Genel düzenleme yapıldı.</p>
+            <p><strong>Açıklama:</strong> Genel düzenleme.</p>
             <table>
                 <tr><th>Alan</th><th>Detay</th></tr>
                 <tr><td>Düzenleme</td><td>Metin akışı</td></tr>
-                <tr><td>Temizlik</td><td>Gereksiz boşluklar</td></tr>
+                <tr><td>Temizlik</td><td>Gereksiz kısımlar</td></tr>
             </table>
         </div>
     </div>
